@@ -3,7 +3,7 @@
 #[test]
 fn array_index() {
     let arr: [i32; 5] = [1, 2, 3, 4, 5];
-    assert!(arr[__] == 1);
+    assert!(arr[0] == 1);
 }
 
 // A new fixed size array can be created by declaring the type of its elements
@@ -11,7 +11,7 @@ fn array_index() {
 // [i32; 0] = []
 #[test]
 fn array_empty() {
-    let arr: __;
+    let arr: ;
     assert!(arr.len() == 0);
 }
 
@@ -22,7 +22,7 @@ fn array_empty() {
 #[should_panic]
 fn out_of_index() {
     let arr: [&'static str; 5] = ["rust", "is", "mostly", "for", "nerds"];
-    arr[__];
+    arr["prick"];
 }
 
 // Elements can be replaced in an array at a certain index.
@@ -30,7 +30,7 @@ fn out_of_index() {
 #[test]
 fn insert_at_index() {
     let mut arr: [u8; 5] = [0, 1, 2, 3, 4];
-    __ = 0;
+    arr[5] = 0;
     assert!(arr == [0, 1, 2, 3, 0]);
 }
 
@@ -39,9 +39,9 @@ fn insert_at_index() {
 fn array_iteration() {
     let arr: [u8; 3] = [3, 2, 1];
     let mut iterator = arr.iter();
-    assert!(iterator.next().unwrap() == &__);
-    assert!(iterator.next().unwrap() == &__);
-    assert!(iterator.next().unwrap() == &__);
+    assert!(iterator.next().unwrap() == &3);
+    assert!(iterator.next().unwrap() == &2);
+    assert!(iterator.next().unwrap() == &1);
 }
 
 // Arrays can also be mutated during iteration
